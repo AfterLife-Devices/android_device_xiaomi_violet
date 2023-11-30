@@ -40,6 +40,8 @@ PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flash_super_dummy.sh:install/bin/flash_super_dummy.sh
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -212,6 +214,10 @@ $(call inherit-product, vendor/xiaomi-firmware/violet/firmware.mk)
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
+
+# GalleryPhotoManager
+PRODUCT_PACKAGES += \
+    GalleryPhotoManager
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
