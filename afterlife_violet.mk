@@ -25,7 +25,10 @@ TARGET_SUPPORTS_BLUR := false
 USE_PIXEL_CHARGING := true
 
 # Gapps
-AFTERLIFE_GAPPS := true
+ifeq ($(AFTERLIFE_GAPPS),true)
+    AFTERLIFE_CORE := true
+    AFTERLIFE_EXTRA := true
+endif
 
 # MiuiCamera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
